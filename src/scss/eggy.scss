@@ -1,0 +1,60 @@
+//Variables
+$width: 400px;
+
+//Wrapper
+.eggy {
+    position:fixed;
+    width:$width;
+    overflow:hidden;
+    padding: 1rem;
+    box-sizing:border-box;
+    top:0;
+
+    //Global Toast styles
+    & > div {
+        width:100%;
+        transition: opacity .3s ease, left .2s ease, right .2s ease, max-height .4s, margin-top .4s, padding .4s; 
+        position:relative;
+        opacity:0;
+        max-height:200px;
+        margin-top:10px;
+        border-radius: 4px;
+        padding: .75rem 1rem;
+        box-sizing: border-box;
+        background:#fff;
+        display:grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        grid-gap:.5rem;
+        align-items:center;
+        &.open {
+            opacity:1;
+        }
+        &.closing {
+            max-height:0;
+            opacity:0;
+            margin-top:0;
+            padding:0;
+        }
+    }
+
+    //Wrapper Positions
+    &.top-right {
+        right: 0;
+        & > div {
+            right: (calc(-#{$width} - 25px));
+            &.open{
+                right:0;
+            }
+        }
+    }
+    &.top-left {
+        left: 0;
+        & > div {
+            left: (calc(-#{$width} - 25px));
+            &.open{
+                left:0;
+            }
+        }
+    }
+
+}

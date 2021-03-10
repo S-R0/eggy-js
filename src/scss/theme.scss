@@ -1,0 +1,57 @@
+//Variables
+$success: #61C9A8;
+$error: #D64550;
+$warning: #ED9B40;
+$gray: #404040;
+
+//Wrapper
+.eggy {
+    //Global Toast styles
+    & > div {
+        &.success {
+            border: 2px solid $success;
+            svg:first-of-type {
+                fill: $success;
+            }
+        }
+        &.error {
+            border: 2px solid $error;
+            svg:first-of-type {
+                fill: $error;
+            }
+        }
+        &.warning {
+            border: 2px solid $warning;
+            svg:first-of-type {
+                fill: $warning;
+            }
+        }
+        //Icon
+        svg:first-of-type {
+            width:30px;
+        }
+        //Close btn
+        svg:last-of-type {
+            width:25px;
+            fill: lighten($gray, 30%);
+            justify-self:center;
+            cursor:pointer;
+        }
+        //Text div
+        & > div {    
+            .title, .message {
+                margin:.1rem 0;
+                color:$gray;
+                &.title {
+                    font-weight:bold;
+                    font-size: .9rem;
+                }
+                &.message {
+                    font-weight:400;
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
+
+}
