@@ -11,13 +11,25 @@
 
 ## Install
 
-To install EggyJS, simply download this library and include the build `eggy.js` file. EggyJS builds the basic CSS required and adds it to the DOM when initialised, **so there is no need to link the provided CSS files.**
+Eggy JS can be installed one of the following ways
 
-Once downloaded and placed in your directory, import the module like so.
+### NPM
+To install via NPM run the following
+```
+npm i @s-r0/eggy-js
+```
+then import the module using
+```javascript
+import { Eggy } from '@s-r0/eggy-js';
+```
+
+### Manually
+Manual installation can be done by simply downloading this library and including the build `eggy.js` file. Once downloaded and placed in your directory, import the module like so.
 
 ```javascript
 import { Eggy } from '{{path_to_eggy.js}}';
 ```
+EggyJS builds the basic CSS required and adds it to the DOM when initialised, **so there is no need to link the provided CSS files.**
 
 ## Important Information when using
 For EggyJS to behave as expected, the following must be met when using
