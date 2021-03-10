@@ -106,3 +106,9 @@ Take your output css files and replace the code inside the following functions t
 
 ## Authors
 **Sam Rutter**
+
+## Copyright
+Copyright © 2021 Samgraphic
+
+## License
+EggyJS is under the MIT License
