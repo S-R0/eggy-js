@@ -5,6 +5,7 @@ $width: 400px;
 .eggy {
     position:fixed;
     width:$width;
+    max-width:90%;
     overflow:hidden;
     padding: 1rem;
     box-sizing:border-box;

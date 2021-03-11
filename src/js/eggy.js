@@ -204,7 +204,7 @@ class Builder {
             //Add a class
             styles.classList.add('eggy-styles');
             //Populate it
-            styles.innerHTML = '.eggy{position:fixed;width:400px;overflow:hidden;padding:1rem;box-sizing:border-box;top:0}.eggy>div{width:100%;transition:opacity .3s ease,left .2s ease,right .2s ease,max-height .4s,margin-top .4s,padding .4s;position:relative;opacity:0;max-height:200px;margin-top:10px;border-radius:4px;padding:.75rem 1rem;box-sizing:border-box;background:#fff;display:grid;grid-template-columns:1fr 5fr 1fr;grid-gap:.5rem;align-items:center}.eggy>div.open{opacity:1}.eggy>div.closing{max-height:0;opacity:0;margin-top:0;padding:0}.eggy.top-right{right:0}.eggy.top-right>div{right:calc(-400px - 25px)}.eggy.top-right>div.open{right:0}.eggy.top-left{left:0}.eggy.top-left>div{left:calc(-400px - 25px)}.eggy.top-left>div.open{left:0}';
+            styles.innerHTML = '.eggy{position:fixed;width:400px;max-width:90%;overflow:hidden;padding:1rem;top:0}.eggy,.eggy>div{box-sizing:border-box}.eggy>div{width:100%;transition:opacity .3s ease,left .2s ease,right .2s ease,max-height .4s,margin-top .4s,padding .4s;position:relative;opacity:0;max-height:200px;margin-top:10px;border-radius:4px;padding:.75rem 1rem;background:#fff;display:grid;grid-template-columns:1fr 5fr 1fr;grid-gap:.5rem;align-items:center}.eggy>div.open{opacity:1}.eggy>div.closing{max-height:0;opacity:0;margin-top:0;padding:0}.eggy.top-right{right:0}.eggy.top-right>div{right:-425px}.eggy.top-right>div.open{right:0}.eggy.top-left{left:0}.eggy.top-left>div{left:-425px}.eggy.top-left>div.open{left:0}';
             //Add to the head
             document.querySelector('head').appendChild(styles);
         }
