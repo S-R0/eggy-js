@@ -1,6 +1,6 @@
 {
   "name": "@s-r0/eggy-js",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "build/js/eggy.js",
   "scripts": {
     "task:css:sass": "sass --no-source-map src/scss:build/css && chalk green 'Sass complete'",
@@ -23,9 +23,13 @@
     "eggy-js",
     "eggy.js",
     "toast",
-    "javascript toast"
+    "javascript toast",
+    "toast popup",
+    "javascript popup",
+    "notification",
+    "javascript notification"
   ],
-  "homepage": "https://github.com/S-R0/EggyJS",
+  "homepage": "https://github.com/S-R0/eggy-js",
   "devDependencies": {
     "@babel/cli": "^7.13.10",
     "@babel/core": "^7.13.10",
