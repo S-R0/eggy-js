@@ -19,7 +19,7 @@
 
 1.0.3
 
-  
+*For more detailed release notes, see `releases.md`  
 
 ## Install
 
