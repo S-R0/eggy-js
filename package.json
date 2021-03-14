@@ -1,15 +1,16 @@
 {
   "name": "@s-r0/eggy-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "build/js/eggy.js",
   "scripts": {
-    "task:css:sass": "sass src/scss:build/css && chalk green 'Sass complete'",
-    "task:css:post": "postcss build/css/*.css --use autoprefixer cssnano -d build/css && chalk green 'Post CSS complete'",
+    "task:css:sass": "sass --no-source-map src/scss:build/css && chalk green 'Sass complete'",
+    "task:css:post": "postcss build/css/*.css --use autoprefixer cssnano --no-map -d build/css && chalk green 'Post CSS complete'",
     "task:js:babel": "babel src/js --out-dir build/js && chalk green 'Babel complete'",
     "task:js:minify": "uglifyjs build/js/eggy.js -c -o build/js/eggy.js && chalk green 'JS minify complete'",
     "build:css": "npm run task:css:sass",
     "build:js": "npm run task:js:babel",
-    "watch": "clear && chokidar 'src/js/**/*.js' 'src/scss/**/*.scss' -c 'npm run -s build:css && npm run -s build:js'",
+    "build:styles": "node ./src/scripts/build_styles.js -s && chalk green 'Styles and icons added to JS'",
+    "watch": "clear && chokidar 'src/js/**/*.js' 'src/scss/**/*.scss' -c 'npm run -s build:css && npm run -s build:js && npm run task:css:post && npm run build:styles'",
     "prod": "clear && npm run -s task:css:post && npm run -s task:js:minify && chalk bold green 'Production compile complete'"
   },
   "author": "Sam Rutter <info@samgraphic.co.uk> (https://samgraphic.co.uk/)",
@@ -27,6 +28,7 @@
     "cssnano": "^4.1.10",
     "postcss": "^8.2.7",
     "postcss-cli": "^8.3.1",
+    "replace-in-file": "^6.2.0",
     "sass": "^1.32.8",
     "uglify-js": "^3.13.0"
   },

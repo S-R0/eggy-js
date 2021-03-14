@@ -27,6 +27,8 @@ $width: 400px;
         grid-template-columns: 1fr 5fr 1fr;
         grid-gap:.5rem;
         align-items:center;
+        overflow:hidden;
+        z-index:2;
         &.open {
             opacity:1;
         }
