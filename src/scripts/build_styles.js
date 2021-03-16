@@ -6,6 +6,7 @@ const replace = require('replace-in-file');
 let find = {
     '{{CSS_STYLES}}' : `${__dirname}/../../build/css/eggy.css`,
     '{{CSS_THEME}}' : `${__dirname}/../../build/css/theme.css`,
+    '{{CSS_PROGRESS_BAR}}' : `${__dirname}/../../build/css/progressbar.css`,
     '{{ICON_SUCCESS}}' : `${__dirname}/../../src/img/success.svg`,
     '{{ICON_WARNING}}' : `${__dirname}/../../src/img/warning.svg`,
     '{{ICON_INFO}}' : `${__dirname}/../../src/img/info.svg`,

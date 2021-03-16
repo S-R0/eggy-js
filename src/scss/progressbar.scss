@@ -1,0 +1,36 @@
+//Variables
+$success: #61C9A8;
+$warning: #ED9B40;
+$info: #40a2ed;
+$error: #D64550;
+$gray: #404040;
+
+.eggy {
+    //Global Toast styles
+    & > div {
+        .progress-bar {
+            height:100%;
+            width:105%;
+            position:absolute;
+            top:0;
+            z-index:1;
+            clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
+            animation-name: progressBar;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+            //Do not add the animation duration property, this is handled in JS
+        }
+        &.success > .progress-bar {
+            background-color:rgba($success, 0.1);
+        }
+        &.warning > .progress-bar {
+            background-color:rgba($warning, 0.1);
+        }
+        &.info > .progress-bar {
+            background-color:rgba($info, 0.1);
+        }
+        &.error > .progress-bar {
+            background-color:rgba($error, 0.1);
+        }
+    }
+}

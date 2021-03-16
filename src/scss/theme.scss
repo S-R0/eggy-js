@@ -67,15 +67,5 @@ $gray: #404040;
                 }
             }
         }
-        .progress-bar {
-            height:100%;
-            width:105%;
-            position:absolute;
-            top:0;
-            left:0;
-            background-color:rgba($success, 0.1);
-            z-index:1;
-            clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
-        }
     }
 }

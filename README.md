@@ -17,7 +17,7 @@
 
 ## Current Version
 
-1.0.3
+1.1.0
 
 *For more detailed release notes, see `releases.md`*
 
@@ -93,13 +93,9 @@ But if you want to edit the simple basics of the EggyJS, the most common options
 ```javascript
 
 Eggy({
-
-title:  'Whoops!',
-
-message:  'You done burnt your eggs!',
-
-type:  'error'
-
+    title:  'Whoops!',
+    message:  'You done burnt your eggs!',
+    type:  'error'
 })
 
 ```
@@ -126,6 +122,8 @@ duration | `integer` | `5000` | Duration of the toast notification in millisecon
 
 styles | `boolean` | `true` | Enable the provided styling for the notifications. If set to `false`, the basic animation and positioning styles will still be applied, but no 'theme' styles will be added.
 
+progressBar | `boolean` | `true` | Enable progress bars. The progress bars will be animated and the duration matches the duration of each individual eggy popup.
+
   
   
 
@@ -136,11 +134,14 @@ Calling eggy returns a promise containing the toast `HTMLElement`, so callbacks 
 ```javascript
 
 Eggy().then((eggytoast) => {
-
-eggytoast.classList.add('sunny-side-up');
-
+    eggytoast.classList.add('sunny-side-up');
 })
 
+```
+or if youd prefer `async/await`
+```javascript
+let eggytoast = await Eggy();
+eggytoast.classList.add('sunny-side-up');
 ```
 
   
@@ -152,11 +153,8 @@ EggyJS will automatically stack if a toast has already been initialised in the s
 ```javascript
 
 await  Eggy({title:  'Top right 1'});
-
 await  Eggy({title:  'Top right 2'});
-
 await  Eggy({title:  'Top left 1', position:  'top-left'});
-
 await  Eggy({title:  'Top left 2', position:  'top-left'});
 
 ```
