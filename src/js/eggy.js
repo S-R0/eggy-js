@@ -67,22 +67,25 @@ class Builder {
     async createToast(){
         //Create the element
         let toast = document.createElement('div'),
-            innerWrapper = document.createElement('div'),
-            title = document.createElement('p'),
-            message = document.createElement('p');
+            innerWrapper = document.createElement('div');
         //Generate a random toast id
         toast.setAttribute('id', 'eggy-'+Math.random().toString(36).substr(2, 4));
         //Set toast attributes
         toast.classList.add(this.options.type);
-        //Set title attributes and content
-        title.classList.add('title');
-        title.innerHTML = this.options.title;
-        //Set message attributes and content
-        message.classList.add('message');
-        message.innerHTML = this.options.message;
-        //Append the items to the inner wrapper
-        innerWrapper.appendChild(title);
-        innerWrapper.appendChild(message);
+        //Are we adding a title?
+        if(this.options.title){
+            let title = document.createElement('p');
+            title.classList.add('title');
+            title.innerHTML = this.options.title;
+            innerWrapper.appendChild(title);
+        }
+        //Are we adding a message?
+        if(this.options.message){
+            let message = document.createElement('p');
+            message.classList.add('message');
+            message.innerHTML = this.options.message;
+            innerWrapper.appendChild(message);
+        }
         //Append the icon, inner wrapper and close btn to the toast
         toast.innerHTML = await this.getIconContent();
         toast.appendChild(innerWrapper);
@@ -243,19 +246,23 @@ class Builder {
     */
     async addProgressBarToToast(toast){
         //Build our HTML
-        let progressBar = document.createElement('span'),
-            progressBarStyles = document.createElement('style');
-        //Get the toasts id
-        let toast_id = toast.getAttribute('id');
+        let progressBar = document.createElement('span');
         //Get the duration
         let duration = this.options.duration / 1000;
-        //Add our inner HTML and classes
+        //Add our classes
         progressBar.classList.add('progress-bar');
-        progressBarStyles.innerHTML = `{{CSS_PROGRESS_BAR}}`;
-        progressBarStyles.innerHTML += `#${toast_id} > .progress-bar { animation-duration: ${duration}s }`;
-        //Append it to the toast
         toast.appendChild(progressBar);
-        toast.appendChild(progressBarStyles);
+        //Add our styles
+        if(this.options.styles){
+            //Get the toasts id
+            let toast_id = toast.getAttribute('id'),
+                progressBarStyles = document.createElement('style');
+            //Build the content
+            progressBarStyles.innerHTML = `{{CSS_PROGRESS_BAR}}`;
+            progressBarStyles.innerHTML += `#${toast_id} > .progress-bar { animation-duration: ${duration}s }`;
+            toast.appendChild(progressBarStyles);
+        }
+        //Append it to the toast
         //Return the toast
         return toast;
     }

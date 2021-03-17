@@ -17,7 +17,7 @@
 
 ## Current Version
 
-1.1.0
+1.2.0
 
 *For more detailed release notes, see `releases.md`*
 
@@ -110,19 +110,19 @@ Param | Type | Default | Details
 
 ------------ | ------------- | ------------- | -------------
 
-title | `string` | `Success` | The title that gets displayed at the top of the notification
+title | `string/boolean` | `'Success'` | The title that gets displayed at the top of the notification. Can be removed by providing `false`.
 
-message | `string` | `Task complete successfully!` | The main message inside the notification
+message | `string/boolean` | `'Task complete successfully!'` | The main message inside the notification. Can be removed by providing `false`.
 
-position | `string` | `top-right` | Options avaiable are `top-right`, `top-left`, `bottom-right` and `bottom-left`
+position | `string` | `'top-right'` | Options avaiable are `'top-right'`, `'top-left'`, `'bottom-right'` and `'bottom-left'`
 
-type | `string` | `success` | Options available are `success`, `warning`, `info` and `error`
+type | `string` | `'success'` | Options available are `'success'`, `'warning'`, `'info'` and `'error'`
 
 duration | `integer` | `5000` | Duration of the toast notification in milliseconds
 
 styles | `boolean` | `true` | Enable the provided styling for the notifications. If set to `false`, the basic animation and positioning styles will still be applied, but no 'theme' styles will be added.
 
-progressBar | `boolean` | `true` | Enable progress bars. The progress bars will be animated and the duration matches the duration of each individual eggy popup.
+progressBar | `boolean` | `true` | Enable progress bars. The progress bars will be animated and the duration matches the duration of each individual eggy popup. The **html only** for the progress bar will be added if `styles` is set to `false`, so custom styling can be applied.
 
   
   

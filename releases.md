@@ -6,3 +6,6 @@ Initial eggy release
 * Added in new build process to make modifying eggy easier.
 ### 1.1.0
 * Added animated progress bars to the popups.
+### 1.2.0
+* Titles and messages can now be disabled by passing `false` as an option.
+* Remove progress bar styles if `styles` is set to false
