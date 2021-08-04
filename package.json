@@ -1,6 +1,6 @@
 {
   "name": "@s-r0/eggy-js",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "main": "build/js/eggy.js",
   "scripts": {
     "task:css:sass": "sass --no-source-map src/scss:build/css && chalk green 'Sass complete'",

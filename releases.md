@@ -13,3 +13,5 @@ Initial eggy release
 * Added in ie-11 postcss plugins
 ### 1.3.1
 * More ie11 styling fixes
+### 1.3.2
+* Small fixes to previous release
