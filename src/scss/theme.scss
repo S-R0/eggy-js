@@ -51,6 +51,7 @@ $gray: #404040;
             fill: lighten($gray, 30%);
             justify-self:center;
             cursor:pointer;
+            margin-left:auto;
         }
         //Text div
         & > div {    

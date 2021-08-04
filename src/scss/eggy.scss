@@ -26,6 +26,8 @@ $width: 400px;
         display:grid;
         grid-template-columns: 1fr 5fr 1fr;
         grid-gap:.5rem;
+        display: -ms-flexbox;
+        justify-content:center;
         align-items:center;
         overflow:hidden;
         z-index:2;

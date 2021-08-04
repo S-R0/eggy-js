@@ -11,3 +11,5 @@ Initial eggy release
 * Remove progress bar styles if `styles` is set to false
 ### 1.3.0
 * Added in ie-11 postcss plugins
+### 1.3.1
+* More ie11 styling fixes
