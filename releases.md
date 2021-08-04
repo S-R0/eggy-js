@@ -9,3 +9,5 @@ Initial eggy release
 ### 1.2.0
 * Titles and messages can now be disabled by passing `false` as an option.
 * Remove progress bar styles if `styles` is set to false
+### 1.3.0
+* Added in ie-11 postcss plugins
