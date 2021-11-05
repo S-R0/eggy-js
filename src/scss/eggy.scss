@@ -9,12 +9,12 @@ $width: 400px;
     overflow:hidden;
     padding: 1rem;
     box-sizing:border-box;
-    top:0;
+
 
     //Global Toast styles
     & > div {
         width:100%;
-        transition: opacity .3s ease, left .2s ease, right .2s ease, max-height .4s, margin-top .4s, padding .4s; 
+        transition: opacity .3s ease, left .2s ease, right .2s ease, max-height .4s, margin-top .4s, padding .4s;
         position:relative;
         opacity:0;
         max-height:200px;
@@ -45,6 +45,17 @@ $width: 400px;
     //Wrapper Positions
     &.top-right {
         right: 0;
+        top:0;
+        & > div {
+            right: (calc(-#{$width} - 25px));
+            &.open{
+                right:0;
+            }
+        }
+    }
+    &.bottom-right {
+        bottom: 0;
+        right: 0;
         & > div {
             right: (calc(-#{$width} - 25px));
             &.open{
@@ -53,6 +64,17 @@ $width: 400px;
         }
     }
     &.top-left {
+        left: 0;
+        top:0;
+        & > div {
+            left: (calc(-#{$width} - 25px));
+            &.open{
+                left:0;
+            }
+        }
+    }
+    &.bottom-left {
+        bottom: 0;
         left: 0;
         & > div {
             left: (calc(-#{$width} - 25px));
